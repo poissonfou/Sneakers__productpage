@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="overlay" hidden></div>
+    <header class="header">
+        <nav class="nav" id="nav-mobile">
+            <img src="images/icon-close.svg" aria-label="button to close menu" alt="close menu icon"
+                id="close-menu-icon">
+            <ul class="nav__links">
+                <li class="nav__link">Collections</li>
+                <li class="nav__link">Men</li>
+                <li class="nav__link">Women</li>
+                <li class="nav__link">About</li>
+                <li class="nav__link">Contact</li>
+            </ul>
+        </nav>
+        <div class="header__leftsection">
+            <img src="images/icon-menu.svg" aria-label="button to open menu" alt="hamburguer menu icon" id="menu-icon">
+            <img src="images/logo.svg" alt="logo">
+        </div>
+        <div class="header__rightsection">
+            <div class="header__cartbox">
+                <img src="images/icon-cart.svg" id="cart" alt="a icon of a shopping cart">
+                <div class="cart__quantity" aria-label="products in cart" id="cart-quantity"></div>
+            </div>
+            <img class="header__profilpic" src="images/image-avatar.png" alt="profile picture">
+        </div>
+        <div class="header__cart__display header__cart__display--hidden" id="cart-display" aria-label="cart's products">
+            <p class="cart__title">Cart</p>
+            <div class="cart__products" id="cart-products">
+                <p class="cart__empty">Your cart is empty.</p>
+            </div>
+            <button class="cart__checkout" hidden id="cart-btn">Checkout</button>
+        </div>
+    </header>
+    <main class="product">
+        <div class="product__imgs__container">
+            <div class="product__imgs">
+                <img class="product__img" src="images/image-product-1.jpg" alt="image of the product">
+                <img class="product__img" src="images/image-product-2.jpg" alt="image of the product">
+                <img class="product__img" src="images/image-product-3.jpg" alt="image of the product">
+                <img class="product__img" src="images/image-product-4.jpg" alt="image of the product">
+            </div>
+            <img class="carrousel__btn" src="images/icon-previous.svg" id="previous"
+                alt="icon to go the previous image">
+            <img class="carrousel__btn" src="images/icon-next.svg" id="next" alt="icon to go the next image">
+        </div>
+
+        <div class="product__info">
+            <p class="product__brand">Sneaker Company</p>
+            <h1 class="product__name">Fall Limited Edition Sneakers</h1>
+            <p class="product__desc">These low-porfile sneakers are your perfect casual wear companion. Featuring a
+                durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+            <div class="product__pricebox">
+                <div>
+                    <span class="price__main">$125.00</span>
+                    <span class="price__discount">50%</span>
+                </div>
+                <span class="price__previous"><s>$250.00</s></span>
+            </div>
+            <form class="product__controls" id="form-add-cart">
+                <div class="controls__quantity">
+                    <button type="button" aria-label="button to remove one unit" id="subtract-quantity">
+                        <img src="images/icon-minus.svg" alt="icon of a minus sign">
+                    </button>
+                    <input tabindex="-1" type="text" name="quantity" id="quantity" value="1" readonly></input>
+                    <button type="button" aria-label="button to add one unit" id="add-quantity">
+                        <img src="images/icon-plus.svg" alt="icon of a plus sign">
+                    </button>
+                </div>
+                <button class="controls__add" type="submit">
+                    <img src="images/icon-cart.svg" alt="icon of a shop cart">
+                    Add to cart
+                </button>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>
