@@ -17,7 +17,7 @@ closeBtn.addEventListener("click", () => {
 //carrousel
 const previous = document.getElementById("previous");
 const next = document.getElementById("next");
-const images = document.getElementsByClassName("product__img");
+const images = document.querySelectorAll(".product__img");
 
 let i = 0;
 next.addEventListener("click", () => {
@@ -30,6 +30,60 @@ previous.addEventListener("click", () => {
   if (i == 0) return;
   i--;
   images[i].scrollIntoView({ behavior: "smooth" });
+});
+
+//img selection desktop
+const imgDisplay = document.getElementById("img-display");
+const imgDisplayOverlay = document.getElementById("img-display-overlay");
+
+function selectImg(img) {
+  const url = img.getAttribute("src");
+  imgDisplay.style.backgroundImage = `url(${url})`;
+  imgDisplayOverlay.style.backgroundImage = `url(${url})`;
+
+  document
+    .querySelector('.imgs__btn [aria-selected="true"]')
+    .setAttribute("aria-selected", false);
+
+  img.setAttribute("aria-selected", true);
+}
+
+images.forEach((img) => {
+  img.addEventListener("click", () => selectImg(img));
+});
+
+//carrousel overlay
+const nextOverlay = document.getElementById("next-overlay");
+const previousOverlay = document.getElementById("previous-overlay");
+
+nextOverlay.addEventListener("click", () => {
+  const selectedImg = document.querySelector(
+    '.imgs__btn [aria-selected="true"]'
+  );
+  if (!selectedImg.nextElementSibling) return;
+  selectImg(selectedImg.nextElementSibling);
+});
+
+previousOverlay.addEventListener("click", () => {
+  const selectedImg = document.querySelector(
+    '.imgs__btn [aria-selected="true"]'
+  );
+  if (!selectedImg.previousElementSibling) return;
+  selectImg(selectedImg.previousElementSibling);
+});
+
+const imgsOverlay = document.getElementById("imgs-overlay");
+
+//open overlay
+imgDisplay.addEventListener("click", () => {
+  imgsOverlay.removeAttribute("hidden");
+});
+
+//close overlay
+const closeOverlay = document.getElementById("close-overlay");
+
+closeOverlay.addEventListener("click", () => {
+  imgsOverlay.setAttribute("hidden", true);
 });
 
 //cart

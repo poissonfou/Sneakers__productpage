@@ -14,6 +14,34 @@
 
 <body>
     <div class="overlay" hidden></div>
+    <div class="imgs__overlay" id="imgs-overlay" hidden>
+        <div class="product__imgs__container product__imgs__container--overlay">
+            <img class="overlay_close" id="close-overlay" src="images/icon-close.svg" aria-label="close button"
+                alt="icon a close button">
+            <div class="img__display__container">
+                <div class="img__display" id="img-display-overlay">
+                </div>
+                <div class="imgs__overlay__btn" id="previous-overlay">
+                    <img src="images/icon-previous.svg" alt="icon to go the previous image">
+                </div>
+                <div class="imgs__overlay__btn" id="next-overlay">
+                    <img src="images/icon-next.svg" alt="icon to go the next image">
+                </div>
+
+            </div>
+
+            <div class="imgs__btn imgs__btn--overlay">
+                <img aria-selected="true" class="product__img product__img--overlay" src="images/image-product-1.jpg"
+                    alt="image of the product">
+                <img aria-selected="false" class="product__img product__img--overlay" src="images/image-product-2.jpg"
+                    alt="image of the product">
+                <img aria-selected="false" class="product__img product__img--overlay" src="images/image-product-3.jpg"
+                    alt="image of the product">
+                <img aria-selected="false" class="product__img product__img--overlay" src="images/image-product-4.jpg"
+                    alt="image of the product">
+            </div>
+        </div>
+    </div>
     <header class="header">
         <nav class="nav" id="nav-mobile">
             <img src="images/icon-close.svg" aria-label="button to close menu" alt="close menu icon"
@@ -46,7 +74,7 @@
         </div>
     </header>
     <main class="product">
-        <div class="product__imgs__container">
+        <div class="product__imgs__container product__imgs__container--mobile">
             <div class="product__imgs">
                 <img class="product__img" src="images/image-product-1.jpg" alt="image of the product">
                 <img class="product__img" src="images/image-product-2.jpg" alt="image of the product">
@@ -56,6 +84,21 @@
             <img class="carrousel__btn" src="images/icon-previous.svg" id="previous"
                 alt="icon to go the previous image">
             <img class="carrousel__btn" src="images/icon-next.svg" id="next" alt="icon to go the next image">
+        </div>
+
+        <div class="product__imgs__container product__imgs__container--desktop">
+            <div class="img__display" id="img-display">
+            </div>
+            <div class="imgs__btn">
+                <img aria-selected="true" class="product__img" src="images/image-product-1.jpg"
+                    alt="image of the product">
+                <img aria-selected="false" class="product__img" src="images/image-product-2.jpg"
+                    alt="image of the product">
+                <img aria-selected="false" class="product__img" src="images/image-product-3.jpg"
+                    alt="image of the product">
+                <img aria-selected="false" class="product__img" src="images/image-product-4.jpg"
+                    alt="image of the product">
+            </div>
         </div>
 
         <div class="product__info">
