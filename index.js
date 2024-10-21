@@ -35,21 +35,26 @@ previous.addEventListener("click", () => {
 //img selection desktop
 const imgDisplay = document.getElementById("img-display");
 const imgDisplayOverlay = document.getElementById("img-display-overlay");
+const imgBoxes = document.querySelectorAll(".product__imgbox");
 
-function selectImg(img) {
+function selectImg(box) {
+  const img = box.children[0];
   const url = img.getAttribute("src");
   imgDisplay.style.backgroundImage = `url(${url})`;
   imgDisplayOverlay.style.backgroundImage = `url(${url})`;
 
-  document
-    .querySelector('.imgs__btn [aria-selected="true"]')
-    .setAttribute("aria-selected", false);
+  const previouslySelected = document.querySelectorAll(
+    '.imgs__btn [aria-selected="true"]'
+  );
 
-  img.setAttribute("aria-selected", true);
+  previouslySelected.forEach((x) => x.setAttribute("aria-selected", false));
+
+  const boxes = document.querySelectorAll(`.imgs__btn [src="${url}"]`);
+  boxes.forEach((box) => box.parentElement.setAttribute("aria-selected", true));
 }
 
-images.forEach((img) => {
-  img.addEventListener("click", () => selectImg(img));
+imgBoxes.forEach((box) => {
+  box.addEventListener("click", () => selectImg(box));
 });
 
 //carrousel overlay
@@ -72,9 +77,9 @@ previousOverlay.addEventListener("click", () => {
   selectImg(selectedImg.previousElementSibling);
 });
 
+//open overlay
 const imgsOverlay = document.getElementById("imgs-overlay");
 
-//open overlay
 imgDisplay.addEventListener("click", () => {
   imgsOverlay.removeAttribute("hidden");
 });
@@ -143,5 +148,7 @@ form.addEventListener("submit", (e) => {
     </div>
     `
   );
+  const cartQuantity = document.getElementById("cart-quantity");
+  cartQuantity.innerText = q;
   cartBtn.removeAttribute("hidden");
 });

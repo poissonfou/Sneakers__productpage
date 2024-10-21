@@ -31,14 +31,18 @@
             </div>
 
             <div class="imgs__btn imgs__btn--overlay">
-                <img aria-selected="true" class="product__img product__img--overlay" src="images/image-product-1.jpg"
-                    alt="image of the product">
-                <img aria-selected="false" class="product__img product__img--overlay" src="images/image-product-2.jpg"
-                    alt="image of the product">
-                <img aria-selected="false" class="product__img product__img--overlay" src="images/image-product-3.jpg"
-                    alt="image of the product">
-                <img aria-selected="false" class="product__img product__img--overlay" src="images/image-product-4.jpg"
-                    alt="image of the product">
+                <div aria-selected="true" class="product__imgbox">
+                    <img class="product__img" src="images/image-product-1.jpg" alt="image of the product">
+                </div>
+                <div aria-selected="false" class="product__imgbox">
+                    <img class="product__img" src="images/image-product-2.jpg" alt="image of the product">
+                </div>
+                <div aria-selected="false" class="product__imgbox">
+                    <img class="product__img" src="images/image-product-3.jpg" alt="image of the product">
+                </div>
+                <div aria-selected="false" class="product__imgbox">
+                    <img class="product__img" src="images/image-product-4.jpg" alt="image of the product">
+                </div>
             </div>
         </div>
     </div>
@@ -54,12 +58,24 @@
                 <li class="nav__link">Contact</li>
             </ul>
         </nav>
-        <div class="header__leftsection">
+        <div class="header__leftsection" id="mobile-header-leftsection">
             <img src="images/icon-menu.svg" aria-label="button to open menu" alt="hamburguer menu icon" id="menu-icon">
             <img src="images/logo.svg" alt="logo">
         </div>
+        <div class="header__leftsection" id="desktop-header-leftsection">
+            <img src="images/logo.svg" alt="logo">
+            <nav class="nav" id="nav-desktop">
+                <ul class="nav__links">
+                    <li class="nav__link">Collections</li>
+                    <li class="nav__link">Men</li>
+                    <li class="nav__link">Women</li>
+                    <li class="nav__link">About</li>
+                    <li class="nav__link">Contact</li>
+                </ul>
+            </nav>
+        </div>
         <div class="header__rightsection">
-            <div class="header__cartbox">
+            <div class="header__cartbox" id="cartbox">
                 <img src="images/icon-cart.svg" id="cart" alt="a icon of a shopping cart">
                 <div class="cart__quantity" aria-label="products in cart" id="cart-quantity"></div>
             </div>
@@ -90,14 +106,18 @@
             <div class="img__display" id="img-display">
             </div>
             <div class="imgs__btn">
-                <img aria-selected="true" class="product__img" src="images/image-product-1.jpg"
-                    alt="image of the product">
-                <img aria-selected="false" class="product__img" src="images/image-product-2.jpg"
-                    alt="image of the product">
-                <img aria-selected="false" class="product__img" src="images/image-product-3.jpg"
-                    alt="image of the product">
-                <img aria-selected="false" class="product__img" src="images/image-product-4.jpg"
-                    alt="image of the product">
+                <div aria-selected="true" class="product__imgbox">
+                    <img class="product__img" src="images/image-product-1.jpg" alt="image of the product">
+                </div>
+                <div aria-selected="false" class="product__imgbox">
+                    <img class="product__img" src="images/image-product-2.jpg" alt="image of the product">
+                </div>
+                <div aria-selected="false" class="product__imgbox">
+                    <img class="product__img" src="images/image-product-3.jpg" alt="image of the product">
+                </div>
+                <div aria-selected="false" class="product__imgbox">
+                    <img class="product__img" src="images/image-product-4.jpg" alt="image of the product">
+                </div>
             </div>
         </div>
 
