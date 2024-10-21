@@ -36,14 +36,12 @@ body {
   top: 0;
   left: 0;
   z-index: 3;
-  padding: 0rem 5rem;
+  padding: 0rem 3rem;
   text-align: right;
 }
 
 .product__imgs__container--overlay {
   height: auto !important;
-  margin-top: 50%;
-  transform: translateY(-20%);
 }
 
 .overlay_close {
@@ -94,6 +92,27 @@ body {
   filter: brightness(0) saturate(100%) invert(68%) sepia(50%) saturate(5241%)
     hue-rotate(346deg) brightness(101%) contrast(103%);
   cursor: pointer;
+}
+
+.imgs__btn {
+  display: none;
+}
+
+.product__imgbox {
+  height: 110px;
+  width: 110px;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: white;
+}
+
+.img__display {
+  width: 100%;
+  height: 25rem;
+  background-image: url(images/image-product-1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
 }
 
 .header {
@@ -155,7 +174,7 @@ body {
 
 .nav {
   background-color: var(--White);
-  position: absolute;
+  position: fixed;
   z-index: 2;
   top: 0;
   left: 0;
@@ -261,7 +280,7 @@ body {
 
 .product__imgs__container {
   position: relative;
-  height: 35vh;
+  height: max(35vh, 20rem);
 }
 
 .product__imgs__container--desktop {
@@ -279,6 +298,7 @@ body {
 .product__img {
   width: 100vw;
   flex: 0 0 auto;
+  object-fit: cover;
 }
 
 .carrousel__btn {
@@ -442,11 +462,16 @@ body {
     display: block;
     margin: 2rem 0rem;
     height: auto;
+    padding: 0rem 5rem;
+  }
+
+  .imgs__overlay {
+    padding: 0rem 10rem;
   }
 
   .img__display {
     width: 100%;
-    height: 30rem;
+    height: 25rem;
     background-image: url(images/image-product-1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -457,14 +482,7 @@ body {
     display: flex;
     justify-content: space-between;
     margin-top: 1.5rem;
-  }
-
-  .product__imgbox {
-    height: 110px;
-    width: 110px;
-    border-radius: 15px;
-    overflow: hidden;
-    background-color: white;
+    gap: 1rem;
   }
 
   .product__img:hover {
@@ -490,9 +508,13 @@ body {
   }
 }
 
-@media (min-width: 70rem) {
+@media (min-width: 65rem) {
   body {
     padding: 0rem 9vw;
+  }
+
+  .product__imgs__container--desktop {
+    padding: 0rem;
   }
 
   .imgs__overlay {

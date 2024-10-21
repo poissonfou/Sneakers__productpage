@@ -5,7 +5,7 @@ const navMobile = document.getElementById("nav-mobile");
 const overlay = document.getElementsByClassName("overlay")[0];
 
 menuBtn.addEventListener("click", () => {
-  navMobile.style.transform = "translateX(0%)";
+  navMobile.style.transform = "translateX(10%)";
   overlay.removeAttribute("hidden");
 });
 
