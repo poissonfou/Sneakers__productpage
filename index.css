@@ -377,7 +377,7 @@ body {
   align-items: center;
   justify-content: space-between;
   background-color: var(--Light-grayish-blue);
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.2rem;
   border-radius: 7px;
   margin-bottom: 1rem;
 }
@@ -386,6 +386,8 @@ body {
   background-color: transparent;
   border: none;
   text-align: center;
+  width: 50px;
+  height: 25px;
 }
 
 .controls__quantity button:hover {
