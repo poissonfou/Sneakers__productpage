@@ -66,20 +66,20 @@
             <img src="images/logo.svg" alt="logo">
             <nav class="nav" id="nav-desktop">
                 <ul class="nav__links">
-                    <li class="nav__link">Collections</li>
-                    <li class="nav__link">Men</li>
-                    <li class="nav__link">Women</li>
-                    <li class="nav__link">About</li>
-                    <li class="nav__link">Contact</li>
+                    <li tabindex="0" class="nav__link">Collections</li>
+                    <li tabindex="-1" class="nav__link">Men</li>
+                    <li tabindex="-1" class="nav__link">Women</li>
+                    <li tabindex="-1" class="nav__link">About</li>
+                    <li tabindex="-1" class="nav__link">Contact</li>
                 </ul>
             </nav>
         </div>
         <div class="header__rightsection">
             <div class="header__cartbox" id="cartbox">
-                <img src="images/icon-cart.svg" id="cart" alt="a icon of a shopping cart">
+                <img src="images/icon-cart.svg" tabindex="0" id="cart" alt="a icon of a shopping cart">
                 <div class="cart__quantity" aria-label="products in cart" id="cart-quantity"></div>
             </div>
-            <img class="header__profilpic" src="images/image-avatar.png" alt="profile picture">
+            <img class="header__profilpic" tabindex="0" src="images/image-avatar.png" alt="profile picture">
         </div>
         <div class="header__cart__display header__cart__display--hidden" id="cart-display" aria-label="cart's products">
             <p class="cart__title">Cart</p>
@@ -106,16 +106,16 @@
             <div class="img__display" id="img-display">
             </div>
             <div class="imgs__btn">
-                <div aria-selected="true" class="product__imgbox">
+                <div aria-selected="true" tabindex="0" class="product__imgbox">
                     <img class="product__img" src="images/image-product-1.jpg" alt="image of the product">
                 </div>
-                <div aria-selected="false" class="product__imgbox">
+                <div aria-selected="false" tabindex="-1" class="product__imgbox">
                     <img class="product__img" src="images/image-product-2.jpg" alt="image of the product">
                 </div>
-                <div aria-selected="false" class="product__imgbox">
+                <div aria-selected="false" tabindex="-1" class="product__imgbox">
                     <img class="product__img" src="images/image-product-3.jpg" alt="image of the product">
                 </div>
-                <div aria-selected="false" class="product__imgbox">
+                <div aria-selected="false" tabindex="-1" class="product__imgbox">
                     <img class="product__img" src="images/image-product-4.jpg" alt="image of the product">
                 </div>
             </div>

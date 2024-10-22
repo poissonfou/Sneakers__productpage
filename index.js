@@ -14,6 +14,35 @@ closeBtn.addEventListener("click", () => {
   overlay.setAttribute("hidden", true);
 });
 
+//nav focus
+const navDesktop = document.getElementById("nav-desktop");
+const navDesktopLink = document.querySelectorAll("#nav-desktop .nav__link");
+
+let j = 0;
+navDesktop.addEventListener("keydown", (e) => {
+  const keydownLeft = 37;
+  const keydownRight = 39;
+
+  if (e.keyCode === keydownLeft || e.keyCode === keydownRight) {
+    navDesktopLink[j].setAttribute("tabindex", -1);
+
+    if (e.keyCode === keydownRight) {
+      j++;
+      if (j >= navDesktopLink.length) {
+        j = 0;
+      }
+    } else if (e.keyCode === keydownLeft) {
+      j--;
+      if (j < 0) {
+        j = navDesktopLink.length - 1;
+      }
+    }
+
+    navDesktopLink[j].setAttribute("tabindex", 0);
+    navDesktopLink[j].focus();
+  }
+});
+
 //carrousel
 const previous = document.getElementById("previous");
 const next = document.getElementById("next");
@@ -55,6 +84,11 @@ function selectImg(box) {
 
 imgBoxes.forEach((box) => {
   box.addEventListener("click", () => selectImg(box));
+  box.addEventListener("keydown", (e) => {
+    if (e.keyCode == 13 || e.keyCode == 32) {
+      selectImg(box);
+    }
+  });
 });
 
 //carrousel overlay
@@ -77,6 +111,36 @@ previousOverlay.addEventListener("click", () => {
   selectImg(selectedImg.previousElementSibling);
 });
 
+//focus imgs
+const imgsContainer = document.querySelectorAll(".imgs__btn");
+console.log(imgsContainer);
+
+let t = 0;
+imgsContainer.forEach((container) => {
+  container.addEventListener("keydown", (e) => {
+    const keydownLeft = 37;
+    const keydownRight = 39;
+
+    if (e.keyCode === keydownLeft || e.keyCode === keydownRight) {
+      imgBoxes[t].setAttribute("tabindex", -1);
+
+      if (e.keyCode === keydownRight) {
+        t++;
+        if (t >= imgBoxes.length) {
+          t = 0;
+        }
+      } else if (e.keyCode === keydownLeft) {
+        t--;
+        if (t < 0) {
+          t = imgBoxes.length - 1;
+        }
+      }
+
+      imgBoxes[t].setAttribute("tabindex", 0);
+      imgBoxes[t].focus();
+    }
+  });
+});
 //open overlay
 const imgsOverlay = document.getElementById("imgs-overlay");
 
@@ -107,6 +171,20 @@ cart.addEventListener("click", () => {
   }
 });
 
+cart.addEventListener("keydown", (e) => {
+  if (e.keyCode == 13) {
+    const isHidden = cartDisplay.classList.contains(
+      "header__cart__display--hidden"
+    );
+
+    if (isHidden) {
+      cartDisplay.classList.remove("header__cart__display--hidden");
+    } else {
+      cartDisplay.classList.add("header__cart__display--hidden");
+    }
+  }
+});
+
 //form
 const form = document.getElementById("form-add-cart");
 const addBtn = document.getElementById("add-quantity");
@@ -116,16 +194,20 @@ const quantity = document.getElementById("quantity");
 const cartProducts = document.getElementById("cart-products");
 const cartBtn = document.getElementById("cart-btn");
 
-addBtn.addEventListener("click", () => {
-  let n = new Number(quantity.value);
-  quantity.value = n + 1;
-});
+function add(input) {
+  let n = new Number(input.value);
+  input.value = n + 1;
+}
 
-minusBtn.addEventListener("click", () => {
+addBtn.addEventListener("click", () => add(quantity));
+
+function minus(quantity) {
   let n = new Number(quantity.value);
   if (n == 1) return;
   quantity.value = n - 1;
-});
+}
+
+minusBtn.addEventListener("click", () => minus(quantity));
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
